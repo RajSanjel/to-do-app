@@ -1,13 +1,16 @@
-import "./App.css";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "./components/ui/Navbar";
+import { Navbar } from "./components/Navbar";
+import { AddToDo } from "./components/AddToDo";
+import { ListToDo } from "./components/ListToDo";
 
 function App() {
   return (
     <>
       <Navbar />
-
-      <Button>Click me</Button>
+    <div className="container ">
+      <AddToDo />
+      <ListToDo/>
+    </div>
     </>
   );
 }
