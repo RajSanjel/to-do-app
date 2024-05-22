@@ -1,13 +1,14 @@
-import { AddToDo } from "./components/AddToDo";
-import { DisplayToDo } from "./components/DisplayToDo";
+import "./App.css";
+import { Button } from "@/components/ui/button";
+import { Navbar } from "./components/ui/Navbar";
 
 function App() {
   return (
-    <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-      <h1 style={{ textAlign: "center" }}>To Do List</h1>
-      <AddToDo />
-      <DisplayToDo />
-    </div>
+    <>
+      <Navbar />
+
+      <Button>Click me</Button>
+    </>
   );
 }
 
