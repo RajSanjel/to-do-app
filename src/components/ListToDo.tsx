@@ -60,14 +60,14 @@ function ToDos({ id, title, desc, isCompleted }: ToDosProps) {
       </CardHeader>
       <CardFooter>
         {isCompleted ? (
-          <div className="grid gap-3 grid-flow-col" style={{alignItems:"center"}}>
+          <div className="grid gap-3 grid-flow-row md:grid-flow-col" style={{alignItems:"center"}}>
             <span className="text-green-500 font-bold text-sm">
               ✓ Completed
             </span>
             <ConfirmDelete id={id} />
           </div>
         ) : (
-          <div className="grid grid-flow-col gap-2">
+          <div className="grid grid-flow-row gap-2 md:grid-flow-col">
             <ConfirmDelete id={id} />
             <EditToDo id={id} />
             <Button
