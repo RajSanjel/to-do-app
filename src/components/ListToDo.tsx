@@ -23,7 +23,6 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useState } from "react";
 import { z } from "zod";
-
 type ToDosProps = {
   id: number;
   title: string;
@@ -35,6 +34,9 @@ export function ListToDo() {
   const { todos } = useToDo();
   return (
     <>
+      <h1 className="font-bold m-4">
+        {todos.length != 0 ? "Your TO DOs" : ""}
+      </h1>
       {todos.map((item) => (
         <ToDos
           key={item.id}
@@ -51,14 +53,19 @@ export function ListToDo() {
 function ToDos({ id, title, desc, isCompleted }: ToDosProps) {
   const { markAsDone } = useToDo();
   return (
-    <Card className={`m-3 shadow-xl`}>
+    <Card className={`m-6 shadow-lg hover:shadow-xl`}>
       <CardHeader>
-        <CardTitle className="text-lg">{`${id}. ${title}`}</CardTitle>
+        <CardTitle className="text-lg">{`${title}`}</CardTitle>
         <CardDescription>{desc}</CardDescription>
       </CardHeader>
       <CardFooter>
         {isCompleted ? (
-          <span className="text-green-500 font-bold text-sm">✓ Completed</span>
+          <div className="grid gap-3 grid-flow-col" style={{alignItems:"center"}}>
+            <span className="text-green-500 font-bold text-sm">
+              ✓ Completed
+            </span>
+            <ConfirmDelete id={id} />
+          </div>
         ) : (
           <div className="grid grid-flow-col gap-2">
             <ConfirmDelete id={id} />

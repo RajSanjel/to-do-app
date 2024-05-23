@@ -5,7 +5,7 @@ import { ListToDo } from "./components/ListToDo";
 
 function App() {
   return (
-    <div className="bg-slate-100">
+    <div>
         <Navbar />
         <ToDoProvider>
         <div className="container ">
